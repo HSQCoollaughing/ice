@@ -68,7 +68,14 @@ TokenSchema.statics = {
 
 
         }
-        await token.save()
+        try{
+            await token.save()
+            console.log('存储成功access_token')
+        } catch(e) {
+            console.log('存储失败access_token')
+            console.log(e)
+        }
+        
         return data
   }
 }
