@@ -5,7 +5,7 @@
   "author": "HSQCoollaughing <1070404612@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "backpack dev",
+    "dev": "nodemon -w ./server -w ./start.js --exec node ./start.js",
     "build": "nuxt build && backpack build",
     "start": "cross-env NODE_ENV=production node build/main.js",
     "precommit": "npm run lint",
@@ -14,7 +14,9 @@
   "dependencies": {
     "cross-env": "^5.0.0",
     "koa": "^2.0.0",
+    "koa-router": "^7.2.1",
     "nuxt": "~1.0.0-alpha1",
+    "sha1": "^1.1.1",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
