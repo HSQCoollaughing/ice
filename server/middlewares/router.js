@@ -9,15 +9,16 @@ export const router = app => {
    const {
     signature,
     nonce,
-    timpstamp,
+    timestamp,
     echostr
 
 
 
 
    } =ctx.query
-  const str = [token ,timpstamp,nonce].sort().join('')
+  const str = [token ,timestamp,nonce].sort().join('')
   const sha = sha1(str)
+  console.log(sha=== signature)
   if(sha=== signature){
     ctx.body = echostr
   } else {
@@ -31,5 +32,5 @@ export const router = app => {
     
 //   })
   app.use(router.routes())
-  app.use (router.allowdMethods())
+  app.use (router.allowedMethods())
 }

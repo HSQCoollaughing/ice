@@ -13,7 +13,7 @@ const MIDDLEWARES=['router']
 class Server{
    constructor(){
    this.app =new Koa()
-   this.useMiddleWares(this.app)
+   this.useMiddleWares(this.app)(MIDDLEWARES)
 
    }
    useMiddleWares(app) {
